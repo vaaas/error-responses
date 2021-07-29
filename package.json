@@ -1,8 +1,8 @@
 {
-	"name": "serve",
+	"name": "error-responses",
 	"version": "1.0.0",
-	"description": "serve http response",
-	"main": "serve.js",
+	"description": "basic error rerponses",
+	"main": "error-responses.js",
 	"keywords": [
 		"http", "server"
 	],

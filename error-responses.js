@@ -1,23 +1,8 @@
 'use strict'
-module.exports = {
-    method_not_allowed: () => ({
-        status: 405,
-        mimetype: 'text/plain',
-        data: 'Method not allowed',
-        headers: []
-    }),
+const HttpError = (message, status) =>
+	({ status, data: message, mimetype: 'text/plain', headers: [] })
 
-    not_found: () => ({
-        status: 404,
-        mimetype: 'text/plain',
-        data: 'Not found',
-        headers: []
-    }),
-
-    bad_request: (msg='Bad request') => ({
-        status: 400,
-        mimetype: 'text/plain',
-        data: msg,
-        headers: []
-    }),
-}
+module.exports =
+{	method_not_allowed: HttpError('Method not allowed', 405),
+	not_found: HttpError('Not found', 404),
+	bad_request: (msg='Bad request') => HttpError(msg, 400), }
